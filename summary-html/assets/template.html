@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Syne:wght@600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0c0c0e;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --text-main: #f3f3f3;
+            --text-muted: #8b8b93;
+            --accent: #d4ff3f;
+            /* Vibrant Lime/Yellow */
+            --border-color: rgba(255, 255, 255, 0.08);
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 4rem 2rem;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 4rem;
+            position: relative;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0 0 1rem 0;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: #fff;
+        }
+
+        .accent-text {
+            color: var(--accent);
+        }
+
+        p.subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+        }
+
+        /* 
+         * Add your conversation summary content here.
+         * Recommended Structure:
+         * <div class="section">
+         *    <h2>Key Takeaways</h2>
+         *    <p>...</p>
+         * </div>
+         */
+
+        .section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.4s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .section:hover::before {
+            transform: scaleY(1);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin: 0 0 1.5rem 0;
+            color: #fff;
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--accent);
+            margin: 2rem 0 1rem 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #ccc;
+        }
+
+        li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #fff;
+            border: 1px solid var(--border-color);
+        }
+
+        .code-block {
+            background: #000;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .code-block code {
+            background: transparent;
+            padding: 0;
+            border: none;
+            color: #e2e8f0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--accent);
+            margin: 2rem 0;
+            padding: 1rem 2rem;
+            background: rgba(212, 255, 63, 0.05);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #e2e8f0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            body {
+                padding: 2rem 1.25rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>{{TITLE}}</h1>
+            <p class="subtitle">{{DESCRIPTION}}</p>
+            <div class="meta-info">
+                <span>Date: {{DATE}}</span>
+                <span>Type: Conversation Summary</span>
+            </div>
+        </header>
+
+        <main>
+            {{CONTENT}}
+        </main>
+    </div>
+</body>
+
+</html>
