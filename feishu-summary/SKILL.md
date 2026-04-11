@@ -27,7 +27,7 @@ description: 总结会话内容或根据特定需求生成精美的飞书 (Lark)
    - **标题 (Title)**：如果是总结，使用 `Summary: [话题]`；如果是文档，使用 `[主题名称]`。
    - **执行命令**：
      ```bash
-     lark-cli docs +create --title "[你的标题]" --markdown "[生成的Markdown内容]"
+     lark-cli docs +create --title "[你的标题]" --markdown "[生成的Markdown内容]" --folder-token "PLmPfbXk7ltad0dOy9pcHIYEn7I"
      ```
    - **注意**：确保 Markdown 转义处理正确，特别是多行字符串和特殊字符。
 
