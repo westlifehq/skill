@@ -1,0 +1,32 @@
+# Antigravity Sync Workspace Rules
+
+本仓库是用户个人配置、MCP 插件、Skill 目录及环境依赖的同步枢纽。所有加载本工作区的 AI 代理人 (Agents / Copilots) 必须在运行期间严格遵守以下 SOP 规范。
+
+---
+
+## 🔄 核心 SOP：配置差异自动审计与同步
+
+### 1. 会话开启审计 (Session Start Audit)
+* **动作**：当您作为 Agent 首次被唤醒并加载本工作区时，**必须主动执行配置差异比对**。
+* **比对范围**：比对本地系统路径 `~/.gemini/` 下的源文件与本工作区中 `files/` 的备份文件：
+  - `~/.gemini/antigravity-ide/mcp_config.json`
+  - `~/.gemini/config/` (核心配置文件夹)
+  - `~/.gemini/antigravity-ide/knowledge/` (定制技能库)
+* **动作响应**：如果发现任何文件存在修改、新增或删除（配置漂移），**必须立即主动提示用户**，并询问：
+  > “*检测到您本地的个性化配置/技能与 GitHub 备份存在差异，是否需要为您增量同步并生成 Changelog？*”
+
+### 2. 配置变更时触发 (Change & Sync Workflow)
+* **触发条件**：当用户在当前会话中要求您进行任何个性化配置调整、修改核心 Rules 或安装/修改任何 Skill 时。
+* **强制执行步骤**：
+  1. **生成/更新 Changelog**：遵循 `github-changelog-sync` 技能，根据受影响的范围在 [CHANGELOG.md](file:///Users/hq/.gemini/antigravity-ide/scratch/antigravity-sync/CHANGELOG.md) 顶部以**倒序结构**增量追加详细的修改内容（包含版本号递增、变更时间及详细修改点）。
+  2. **执行备份推送**：征得用户单次授权后，在终端执行：
+     ```bash
+     ./backup.sh
+     ```
+     （该脚本已封装了增量文件覆盖、本地 Git Commit 及 `git push origin main` 远程推送，严禁分步执行以减少用户 Approve 频率）。
+
+---
+
+## 🛠 脚本依赖说明
+* **备份与自动推送**：`./backup.sh`
+* **灾备还原与增量部署**：`./restore.sh`
