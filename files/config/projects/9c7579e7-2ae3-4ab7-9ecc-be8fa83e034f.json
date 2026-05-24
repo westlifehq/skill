@@ -1,0 +1,14 @@
+{
+  "id":  "9c7579e7-2ae3-4ab7-9ecc-be8fa83e034f",
+  "name":  "router 4",
+  "projectResources":  {
+    "resources":  [
+      {
+        "gitFolder":  {
+          "folderUri":  "file:///Users/hq/Desktop/AI/ANTIGRAVITY/router",
+          "allowWrite":  true
+        }
+      }
+    ]
+  }
+}

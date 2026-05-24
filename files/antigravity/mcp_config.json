@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "/Users/hq/.nvm/versions/node/v24.14.1/bin/npx",
+      "args": [
+        "chrome-devtools-mcp@latest",
+        "--browser-url=http://127.0.0.1:9222",
+        "-y"
+      ]
+    }
+  }
+}

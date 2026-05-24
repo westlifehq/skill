@@ -1,0 +1,4 @@
+gemini-cli
+cli
+chrome-devtools-mcp
+corepack

@@ -1,0 +1,14 @@
+{
+  "id": "7b720e73-e3cb-4bdc-a474-2e324df03deb",
+  "name": "/Users/hq",
+  "projectResources": {
+    "resources": [
+      {
+        "gitFolder": {
+          "folderUri": "file:///Users/hq",
+          "allowWrite": true
+        }
+      }
+    ]
+  }
+}

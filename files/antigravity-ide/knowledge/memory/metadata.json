@@ -1,0 +1,8 @@
+{
+  "summary": "Triggered when the user asks to summarize the current conversation progress, save context, or update project context files. Evaluates conversation history and generates or updates five Markdown files (PROJECT_CONTEXT.md, CURRENT_STATUS.md, DECISIONS.md, NEXT_STEPS.md, WORKSPACE_RULES.md) to store persistent memory for cross-conversation use, and outputs a brief walkthrough summarizing the current session.",
+  "created_at": "2026-04-11T17:09:35.460449",
+  "references": [
+    "https://github.com/westlifehq/skill-list/tree/main/memory"
+  ],
+  "type": "skill"
+}

@@ -1,0 +1,8 @@
+{
+  "summary": "Turn raw PM content into a compliant, publish-ready skill by choosing build/add paths, running conformance checks, and updating docs before commit.",
+  "created_at": "2026-04-11T17:09:35.459693",
+  "references": [
+    "https://github.com/westlifehq/skill-list/tree/main/skill-authoring-workflow"
+  ],
+  "type": "skill"
+}

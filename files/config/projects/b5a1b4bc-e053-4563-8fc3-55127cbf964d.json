@@ -1,0 +1,14 @@
+{
+  "id":  "b5a1b4bc-e053-4563-8fc3-55127cbf964d",
+  "name":  "dy",
+  "projectResources":  {
+    "resources":  [
+      {
+        "gitFolder":  {
+          "folderUri":  "file:///Users/hq/Desktop/AI/dy",
+          "allowWrite":  true
+        }
+      }
+    ]
+  }
+}

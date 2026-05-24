@@ -1,0 +1,14 @@
+{
+  "id":  "f66c2420-ad32-47d1-9daa-4002b20ea9ad",
+  "name":  "za 11",
+  "projectResources":  {
+    "resources":  [
+      {
+        "gitFolder":  {
+          "folderUri":  "file:///Users/hq/Desktop/AI/ANTIGRAVITY/za",
+          "allowWrite":  true
+        }
+      }
+    ]
+  }
+}

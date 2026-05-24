@@ -1,0 +1,21 @@
+{
+  "id": "143f5808-ca2d-4780-a7a2-076de2344302",
+  "name": "za",
+  "projectResources": {
+    "resources": [
+      {
+        "folderUri": "file:///Users/hq/Desktop/AI/ANTIGRAVITY/za"
+      }
+    ]
+  },
+  "permissionGrants": {
+    "permissionGrants": {
+      "allow": [
+        "command(basename)",
+        "command(dirname)",
+        "read_file(/Users/hq/.agents/skills/notebooklm/scripts/config.py)",
+        "command(expect)"
+      ]
+    }
+  }
+}

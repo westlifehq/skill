@@ -1,0 +1,37 @@
+{
+  "id":  "4b8c6534-bc0c-47a1-99ea-a81d724e0696",
+  "name":  "dyvideo",
+  "projectResources":  {
+    "resources":  [
+      {
+        "gitFolder":  {
+          "folderUri":  "file:///Users/hq/Desktop/AI/ANTIGRAVITY/dyvideo",
+          "defaultBranch":  "main"
+        }
+      }
+    ]
+  },
+  "permissionGrants":  {
+    "permissionGrants":  {
+      "allow":  [
+        "command(npm run)",
+        "command(lsof)",
+        "command(grep)",
+        "command(head)",
+        "command(git status)",
+        "command(git branch)",
+        "command(git log)",
+        "command(git config)",
+        "command(git add)",
+        "command(git commit)",
+        "read_file(/Users/hq/.ssh/known_hosts)"
+      ]
+    }
+  },
+  "settings":  {
+    "fileAccessPolicy":  "AGENT_SETTING_POLICY_ASK",
+    "internetPolicy":  "AGENT_SETTING_POLICY_ASK",
+    "autoExecutionPolicy":  "CASCADE_COMMANDS_AUTO_EXECUTION_OFF",
+    "artifactReviewMode":  "ARTIFACT_REVIEW_MODE_ALWAYS"
+  }
+}

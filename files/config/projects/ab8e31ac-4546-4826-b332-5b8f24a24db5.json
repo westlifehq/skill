@@ -1,0 +1,15 @@
+{
+  "id":  "ab8e31ac-4546-4826-b332-5b8f24a24db5",
+  "name":  "dyvideo",
+  "projectResources":  {
+    "resources":  [
+      {
+        "gitFolder":  {
+          "folderUri":  "file:///Users/hq/Desktop/AI/ANTIGRAVITY/dyvideo",
+          "defaultBranch":  "main",
+          "allowWrite":  true
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id":  "c5540644-19aa-4317-96af-4a918ec4e999",
+  "name":  "iot 11",
+  "projectResources":  {
+    "resources":  [
+      {
+        "gitFolder":  {
+          "folderUri":  "file:///Users/hq/Desktop/AI/ANTIGRAVITY/iot",
+          "allowWrite":  true
+        }
+      }
+    ]
+  }
+}
