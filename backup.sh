@@ -86,8 +86,11 @@ if [ -n "$(git status --porcelain)" ]; then
     git add .
     git commit -m "Backup: $(date +'%Y-%m-%d %H:%M:%S')"
     echo "✔ 备份已成功提交至本地 Git"
+    echo "正在推送至远程 GitHub 仓库..."
+    git push origin main
+    echo "✔ 已成功增量同步至 GitHub"
 else
-    echo "✔ 没有检测到任何配置变化，无需提交"
+    echo "✔ 没有检测到任何配置变化，无需推送"
 fi
 
 echo -e "\n🎉 备份全部完成！"
