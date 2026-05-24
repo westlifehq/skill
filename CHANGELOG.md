@@ -4,6 +4,16 @@
 
 ---
 
+## [v1.0.2] - 2026-05-24
+
+### 📝 变更概述
+- **分支/提交**: `main`
+- **受影响范围**: `backup.sh`, `restore.sh`, `~/.agents/skills/`
+
+### 🚀 新增功能
+- **集成核心 Superpowers 技能组**：一键成功全局安装 `using-superpowers`, `test-driven-development`, `systematic-debugging`, `brainstorming`, `writing-plans` 技能。
+- **拓展备份覆盖面**：更新 `backup.sh` 与 `restore.sh` 脚本，将全局 Agent 技能目录 `~/.agents/skills` 纳入自动审计与备份范围，确保所有安装的特异功能永不丢失。
+
 ## [v1.0.1] - 2026-05-24
 
 ### 📝 变更概述

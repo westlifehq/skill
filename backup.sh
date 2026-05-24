@@ -67,6 +67,7 @@ sync_dir "$HOME/.gemini/config" "$BACKUP_FILES_DIR/config"
 # 备份 Skills 目录
 sync_dir "$HOME/.gemini/antigravity-ide/knowledge" "$BACKUP_FILES_DIR/antigravity-ide/knowledge"
 sync_dir "$HOME/.gemini/antigravity-ide/skills" "$BACKUP_FILES_DIR/antigravity-ide/skills"
+sync_dir "$HOME/.agents/skills" "$BACKUP_FILES_DIR/agents/skills"
 
 echo "✔ 配置与 Skills 备份完成"
 

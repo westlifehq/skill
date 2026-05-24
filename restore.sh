@@ -28,6 +28,7 @@ backup_local_path "$HOME/.gemini/antigravity/mcp_config.json"
 backup_local_path "$HOME/.gemini/config"
 backup_local_path "$HOME/.gemini/antigravity-ide/knowledge"
 backup_local_path "$HOME/.gemini/antigravity-ide/skills"
+backup_local_path "$HOME/.agents/skills"
 
 echo "✔ 本地状态已安全备份至: $LOCAL_TEMP_BACKUP"
 
@@ -68,6 +69,7 @@ restore_dir "$BACKUP_FILES_DIR/config" "$HOME/.gemini/config"
 # 还原 Skills 目录
 restore_dir "$BACKUP_FILES_DIR/antigravity-ide/knowledge" "$HOME/.gemini/antigravity-ide/knowledge"
 restore_dir "$BACKUP_FILES_DIR/antigravity-ide/skills" "$HOME/.gemini/antigravity-ide/skills"
+restore_dir "$BACKUP_FILES_DIR/agents/skills" "$HOME/.agents/skills"
 
 echo "✔ 配置与 Skills 还原完成"
 
