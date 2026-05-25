@@ -13,7 +13,8 @@
 ├── Brewfile                # Homebrew 导出的软件与 CLI 工具依赖清单
 ├── npm-global.txt          # NPM 全局包依赖清单
 ├── backup.sh               # 一键备份脚本（收集本地配置并推送至本仓库）
-├── restore.sh              # 一键恢复脚本（还原配置并增量装配本地依赖）
+├── restore.sh              # 一键恢复脚本（macOS 还原配置并增量装配本地依赖）
+├── restore.ps1             # 一键恢复脚本（Windows 还原配置并增量装配本地依赖）
 └── files/                  # 核心配置与技能打包目录
     ├── config/             # Antigravity 核心插件、Agents 声明与 sidecars
     ├── antigravity/        # 全局配置，包括 mcp_config.json 等
@@ -35,12 +36,27 @@
 * **效果**：脚本会自动扫描本地 `~/.gemini` 下的配置、Skills，生成最新的 `Brewfile` 与 `npm-global.txt`，并生成带时间戳的 commit 自动推送到 GitHub。
 
 ### 2. 新机或重装恢复 (Restore)
+
+#### 🍏 macOS 环境恢复
 在新环境克隆本仓库后，直接运行：
 ```bash
 ./restore.sh
 ```
 * **安全性保护**：脚本执行前会**自动**将你本地已有的配置备份至 `~/.gemini/backup_before_restore_<timestamp>`，绝不丢失任何数据。
 * **效果**：一键还原所有全局配置、技能；智能检测并增量安装缺少的 Brew 软件和全局 NPM 包。
+
+#### 🪟 Windows 环境恢复
+在新环境使用 PowerShell 克隆本仓库后，执行以下命令：
+1. **允许脚本运行（若遇到权限受阻）**：
+   ```powershell
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+   ```
+2. **运行恢复脚本**：
+   ```powershell
+   ./restore.ps1
+   ```
+* **安全性保护**：脚本执行前会**自动**将你本地已有的配置备份至 `$env:USERPROFILE\.gemini\backup_before_restore_<timestamp>`，绝不丢失任何数据。
+* **效果**：使用 Windows 原生 `robocopy` 增量还原所有全局配置与 Skills 库；智能检测并增量安装缺少的全局 NPM 包。对于 macOS 专有的 Homebrew 依赖，会输出友好指引，引导使用 Windows 包管理器（如 `winget` 或 `scoop`）对照手动安装。
 
 ---
 

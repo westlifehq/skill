@@ -4,6 +4,16 @@
 
 ---
 
+## [v1.0.3] - 2026-05-25
+
+### 📝 变更概述
+- **分支/提交**: `main`
+- **受影响范围**: `restore.ps1`, `README.md`
+
+### 🚀 新增功能
+- **Windows 一键恢复支持 (`restore.ps1`)**：新增 Windows 平台专用的 PowerShell 还原脚本。利用 Windows 原生 `robocopy` 镜像还原技术实现类似 `rsync --delete` 的文件精准及增量同步，支持安全的时间戳备份、NPM 全局依赖包的智能比对增量安装，以及对 macOS 专有 Brew 软件的友好引导。
+- **跨平台文档支持**：在 `README.md` 中扩增 Windows 下的恢复指南与执行策略（Execution Policy）说明。
+
 ## [v1.0.2] - 2026-05-24
 
 ### 📝 变更概述
