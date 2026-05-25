@@ -48,6 +48,8 @@ Backup-LocalPath (Join-Path $env:APPDATA "Code\User\settings.json")
 Backup-LocalPath (Join-Path $env:APPDATA "Code\User\keybindings.json")
 Backup-LocalPath (Join-Path $env:APPDATA "Code\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json")
 Backup-LocalPath (Join-Path $env:APPDATA "Code\User\globalStorage\roodev.rogue-dev\settings\cline_mcp_settings.json")
+Backup-LocalPath (Join-Path $env:USERPROFILE ".claude.json")
+Backup-LocalPath (Join-Path $env:USERPROFILE ".clauderules")
 
 Write-Host "✔ 本地状态已安全备份至: $LOCAL_TEMP_BACKUP" -ForegroundColor Green
 
@@ -105,6 +107,10 @@ Restore-File (Join-Path $BACKUP_FILES_DIR "vscode\settings.json") (Join-Path $en
 Restore-File (Join-Path $BACKUP_FILES_DIR "vscode\keybindings.json") (Join-Path $env:APPDATA "Code\User\keybindings.json")
 Restore-File (Join-Path $BACKUP_FILES_DIR "vscode\cline_mcp_settings.json") (Join-Path $env:APPDATA "Code\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json")
 Restore-File (Join-Path $BACKUP_FILES_DIR "vscode\roo_mcp_settings.json") (Join-Path $env:APPDATA "Code\User\globalStorage\roodev.rogue-dev\settings\cline_mcp_settings.json")
+
+# 还原 Claude Code CLI 配置与全局 Rules
+Restore-File (Join-Path $BACKUP_FILES_DIR "claude\claude.json") (Join-Path $env:USERPROFILE ".claude.json")
+Restore-File (Join-Path $BACKUP_FILES_DIR "claude\clauderules") (Join-Path $env:USERPROFILE ".clauderules")
 
 # 还原全局 Config (含 plugins, agents, sidecars 等)
 Restore-Dir (Join-Path $BACKUP_FILES_DIR "config") (Join-Path $env:USERPROFILE ".gemini\config")
