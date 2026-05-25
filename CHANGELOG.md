@@ -8,11 +8,12 @@
 
 ### 📝 变更概述
 - **分支/提交**: `main`
-- **受影响范围**: `restore.ps1`, `README.md`
+- **受影响范围**: `backup.sh`, `restore.sh`, `restore.ps1`, `README.md`
 
 ### 🚀 新增功能
+- **深度适配 VS Code & Codex & AI 插件**：在 macOS 的备份/恢复脚本与 Windows 的还原脚本中深度融合了 VS Code 全局编辑器首选项（`settings.json`、`keybindings.json`）以及 AI 插件（**Cline**、**Roo Code**）全局 MCP 设置（`cline_mcp_settings.json` / `roo_mcp_settings.json`）的一键全自动跨平台同步。这使得多端开发环境下的 AI 首选项和 MCP 工具链保持极致一致。
 - **Windows 一键恢复支持 (`restore.ps1`)**：新增 Windows 平台专用的 PowerShell 还原脚本。利用 Windows 原生 `robocopy` 镜像还原技术实现类似 `rsync --delete` 的文件精准及增量同步，支持安全的时间戳备份、NPM 全局依赖包的智能比对增量安装，以及对 macOS 专有 Brew 软件的友好引导。
-- **跨平台文档支持**：在 `README.md` 中扩增 Windows 下的恢复指南与执行策略（Execution Policy）说明。
+- **跨平台文档支持**：在 `README.md` 中扩增 Windows 下的恢复指南、执行策略（Execution Policy）说明以及 VS Code / Codex 极致同步的专题介绍。
 
 ## [v1.0.2] - 2026-05-24
 

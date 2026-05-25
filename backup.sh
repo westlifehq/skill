@@ -61,6 +61,12 @@ sync_file() {
 sync_file "$HOME/.gemini/antigravity-ide/mcp_config.json" "$BACKUP_FILES_DIR/antigravity-ide/mcp_config.json"
 sync_file "$HOME/.gemini/antigravity/mcp_config.json" "$BACKUP_FILES_DIR/antigravity/mcp_config.json"
 
+# 备份 VS Code 与 AI 插件配置 (Codex / Cline / Roo Code)
+sync_file "$HOME/Library/Application Support/Code/User/settings.json" "$BACKUP_FILES_DIR/vscode/settings.json"
+sync_file "$HOME/Library/Application Support/Code/User/keybindings.json" "$BACKUP_FILES_DIR/vscode/keybindings.json"
+sync_file "$HOME/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json" "$BACKUP_FILES_DIR/vscode/cline_mcp_settings.json"
+sync_file "$HOME/Library/Application Support/Code/User/globalStorage/roodev.rogue-dev/settings/cline_mcp_settings.json" "$BACKUP_FILES_DIR/vscode/roo_mcp_settings.json"
+
 # 备份全局 Config (含 plugins, agents, sidecars 等)
 sync_dir "$HOME/.gemini/config" "$BACKUP_FILES_DIR/config"
 

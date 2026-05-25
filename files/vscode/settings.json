@@ -1,0 +1,36 @@
+{
+    "chat.viewSessions.orientation": "stacked",
+    "chat.tools.global.autoApprove": true,
+    "chat.tools.autoApprove.edits": true,
+    "chat.tools.eligibleForAutoApproval": {
+        "deleteFile": false,
+        "deleteFiles": false,
+        "removeFile": false,
+        "removeFiles": false
+    },
+    "chat.tools.terminal.enableAutoApprove": true,
+    "chat.tools.terminal.blockDetectedFileWrites": "outsideWorkspace",
+    "chat.tools.terminal.autoApprove": {
+        "/^\\s*(?:sudo\\s+)?(?:rm|rmdir|unlink|trash)\\b/": false,
+        "/^\\s*(?:sudo\\s+)?(?:rm|rmdir|unlink|trash)\\b.*$/": {
+            "approve": false,
+            "matchCommandLine": true
+        },
+        "/\\bgit\\s+clean\\b/": false,
+        "/\\bfind\\b.*\\s-delete\\b/": false,
+        "/\\bfind\\b.*\\s-exec\\s+rm\\b/": false,
+        "/.*/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^ssh rvc@192\\.168\\.31\\.161 \"echo 'west1996' \\| sudo -S docker ps -a --format 'table \\{\\{\\.ID\\}\\}\\\\t\\{\\{\\.Names\\}\\}\\\\t\\{\\{\\.Image\\}\\}\\\\t\\{\\{\\.Status\\}\\}\\\\t\\{\\{\\.Ports\\}\\}' 2>/dev/null\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^ssh rvc@192\\.168\\.31\\.161 \"echo 'west1996' \\| sudo -S docker stop video-downloader && echo 'west1996' \\| sudo -S docker rm video-downloader && echo 'west1996' \\| sudo -S docker rmi nas-deployment-downloader 2>/dev/null; echo DONE\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    },
+    "workbench.editor.useModal": "some"
+}

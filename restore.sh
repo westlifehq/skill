@@ -29,6 +29,10 @@ backup_local_path "$HOME/.gemini/config"
 backup_local_path "$HOME/.gemini/antigravity-ide/knowledge"
 backup_local_path "$HOME/.gemini/antigravity-ide/skills"
 backup_local_path "$HOME/.agents/skills"
+backup_local_path "$HOME/Library/Application Support/Code/User/settings.json"
+backup_local_path "$HOME/Library/Application Support/Code/User/keybindings.json"
+backup_local_path "$HOME/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json"
+backup_local_path "$HOME/Library/Application Support/Code/User/globalStorage/roodev.rogue-dev/settings/cline_mcp_settings.json"
 
 echo "✔ 本地状态已安全备份至: $LOCAL_TEMP_BACKUP"
 
@@ -62,6 +66,12 @@ restore_file() {
 # 还原全局 MCP 配置
 restore_file "$BACKUP_FILES_DIR/antigravity-ide/mcp_config.json" "$HOME/.gemini/antigravity-ide/mcp_config.json"
 restore_file "$BACKUP_FILES_DIR/antigravity/mcp_config.json" "$HOME/.gemini/antigravity/mcp_config.json"
+
+# 还原 VS Code 与 AI 插件配置 (Codex / Cline / Roo Code)
+restore_file "$BACKUP_FILES_DIR/vscode/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
+restore_file "$BACKUP_FILES_DIR/vscode/keybindings.json" "$HOME/Library/Application Support/Code/User/keybindings.json"
+restore_file "$BACKUP_FILES_DIR/vscode/cline_mcp_settings.json" "$HOME/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json"
+restore_file "$BACKUP_FILES_DIR/vscode/roo_mcp_settings.json" "$HOME/Library/Application Support/Code/User/globalStorage/roodev.rogue-dev/settings/cline_mcp_settings.json"
 
 # 还原全局 Config (含 plugins, agents, sidecars 等)
 restore_dir "$BACKUP_FILES_DIR/config" "$HOME/.gemini/config"

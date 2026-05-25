@@ -44,6 +44,10 @@ Backup-LocalPath (Join-Path $env:USERPROFILE ".gemini\config")
 Backup-LocalPath (Join-Path $env:USERPROFILE ".gemini\antigravity-ide\knowledge")
 Backup-LocalPath (Join-Path $env:USERPROFILE ".gemini\antigravity-ide\skills")
 Backup-LocalPath (Join-Path $env:USERPROFILE ".agents\skills")
+Backup-LocalPath (Join-Path $env:APPDATA "Code\User\settings.json")
+Backup-LocalPath (Join-Path $env:APPDATA "Code\User\keybindings.json")
+Backup-LocalPath (Join-Path $env:APPDATA "Code\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json")
+Backup-LocalPath (Join-Path $env:APPDATA "Code\User\globalStorage\roodev.rogue-dev\settings\cline_mcp_settings.json")
 
 Write-Host "✔ 本地状态已安全备份至: $LOCAL_TEMP_BACKUP" -ForegroundColor Green
 
@@ -95,6 +99,12 @@ function Restore-File {
 # 还原全局 MCP 配置
 Restore-File (Join-Path $BACKUP_FILES_DIR "antigravity-ide\mcp_config.json") (Join-Path $env:USERPROFILE ".gemini\antigravity-ide\mcp_config.json")
 Restore-File (Join-Path $BACKUP_FILES_DIR "antigravity\mcp_config.json") (Join-Path $env:USERPROFILE ".gemini\antigravity\mcp_config.json")
+
+# 还原 VS Code 与 AI 插件配置 (Codex / Cline / Roo Code)
+Restore-File (Join-Path $BACKUP_FILES_DIR "vscode\settings.json") (Join-Path $env:APPDATA "Code\User\settings.json")
+Restore-File (Join-Path $BACKUP_FILES_DIR "vscode\keybindings.json") (Join-Path $env:APPDATA "Code\User\keybindings.json")
+Restore-File (Join-Path $BACKUP_FILES_DIR "vscode\cline_mcp_settings.json") (Join-Path $env:APPDATA "Code\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json")
+Restore-File (Join-Path $BACKUP_FILES_DIR "vscode\roo_mcp_settings.json") (Join-Path $env:APPDATA "Code\User\globalStorage\roodev.rogue-dev\settings\cline_mcp_settings.json")
 
 # 还原全局 Config (含 plugins, agents, sidecars 等)
 Restore-Dir (Join-Path $BACKUP_FILES_DIR "config") (Join-Path $env:USERPROFILE ".gemini\config")
