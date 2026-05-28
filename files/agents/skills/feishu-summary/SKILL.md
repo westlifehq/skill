@@ -20,7 +20,7 @@ description: 总结会话内容或根据特定需求生成精美的飞书 (Lark)
    - 如果是具体知识点或报告生成，进入 **模式 B (Generation Mode)**。
 
 2. **内容准备**：
-   - **模式 A (Summary Mode)**：读取 [assets/template.md](./assets/template.md)，提取核心决策点和行动项进行填充。
+   - **模式 A (Summary Mode)**：读取 [assets/template.md](assets/template.md)，提取核心决策点和行动项进行填充。
    - **模式 B (Generation Mode)**：参考当前对话背景（如果相关且用户未明确禁止），直接构思一个专业的 Markdown 文档结构。标题应醒目，内容应包含深度调研（如果需要，先执行调研）或基于已知事实的系统化整理。
 
 3. **创建飞书文档**：
@@ -46,5 +46,9 @@ description: 总结会话内容或根据特定需求生成精美的飞书 (Lark)
 
 ## 资源引用
 
-- **总结模板**: [assets/template.md](./assets/template.md)
-- **通用模板 (参考)**: [assets/generic_template.md](./assets/generic_template.md)
+- **总结模板**: [assets/template.md](assets/template.md)
+- **通用模板 (参考)**: [assets/generic_template.md](assets/generic_template.md)
+
+## Completion & Post-Actions
+
+生成本产物后，主动调用 `obsidian-sync` skill，传入本次产出的原始总结文本、飞书文档链接/临时文件路径、及本 skill 名称 (`feishu-summary`)。

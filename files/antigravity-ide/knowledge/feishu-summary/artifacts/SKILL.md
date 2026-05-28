@@ -48,3 +48,7 @@ description: 总结会话内容或根据特定需求生成精美的飞书 (Lark)
 
 - **总结模板**: [assets/template.md](assets/template.md)
 - **通用模板 (参考)**: [assets/generic_template.md](assets/generic_template.md)
+
+## Completion & Post-Actions
+
+生成本产物后，主动调用 `obsidian-sync` skill，传入本次产出的原始总结文本、飞书文档链接/临时文件路径、及本 skill 名称 (`feishu-summary`)。

@@ -1,0 +1,8 @@
+{
+  "summary": "在产出任何总结型 / 知识型产物（HTML 总结、飞书文档、项目上下文更新、会议纪要、调研报告等）同时，自动把一份 Markdown 镜像写入 Obsidian vault。其他 skill 产出文档时应主动调用本 skill。",
+  "created_at": "2026-05-28T18:34:40.000000",
+  "references": [
+    "https://github.com/westlifehq/skill/tree/main/obsidian-sync"
+  ],
+  "type": "skill"
+}

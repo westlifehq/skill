@@ -24,7 +24,7 @@ When triggered, follow these exact steps:
    - Replace `{{DESCRIPTION}}` with a 1-2 sentence high-level overview.
    - Replace `{{DATE}}` with the current date (e.g., "Oct 24, 2023").
    - Replace `{{CONTENT}}` with your structured HTML summary.
-5. **Save to Desktop**: Choose a relevant, web-safe filename (e.g., `react_hooks_summary.html`) and write the final compiled HTML directly to the user's Desktop (`/Users/hq/Desktop/<filename>.html`).
+5. **Save to Desktop**: Choose a relevant, web-safe filename (e.g., `react_hooks_summary.html`) and write the final compiled HTML directly to the user's Desktop (`/Users/xi/Desktop/<filename>.html`).
 
 ## Design Philosophy
 
@@ -55,3 +55,7 @@ The output should not look like a generic markdown export. It must feel premium,
 ```
 
 **CRITICAL**: Do not ask the user for permission to write the file, just write it to the Desktop and inform them it is ready to view.
+
+## Completion & Post-Actions
+
+生成本产物后，主动调用 `obsidian-sync` skill，传入本次产出的原始总结文本、HTML 产物路径、及本 skill 名称 (`summary-html`)。

@@ -55,3 +55,7 @@ The output should not look like a generic markdown export. It must feel premium,
 ```
 
 **CRITICAL**: Do not ask the user for permission to write the file, just write it to the Desktop and inform them it is ready to view.
+
+## Completion & Post-Actions
+
+生成本产物后，主动调用 `obsidian-sync` skill，传入本次产出的原始总结文本、HTML 产物路径、及本 skill 名称 (`summary-html`)。
